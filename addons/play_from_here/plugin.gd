@@ -1,5 +1,4 @@
 @tool
-class_name PlayFromHere
 extends EditorPlugin
 
 var h_container: HBoxContainer = HBoxContainer.new()
@@ -19,11 +18,6 @@ var draw_gizmo: bool = false
 var current_open_scene: Node = null
 
 const DEFAULT_SELECTED_POINT_TEXT: String = 'Right click any point in the world to enable "Selected Point" option'
-
-static func setup(capture: Callable) -> void:
-	if EngineDebugger.is_active():
-		EngineDebugger.register_message_capture("PlayFromHere", capture)
-		EngineDebugger.send_message("PlayFromHere:GetPlayFromHereTransform", [])
 
 func _enter_tree() -> void:
 	play_from_here_menu.text = "Play From..."
